@@ -1,0 +1,14 @@
+- ansible.builtin.import_role:
+    name: compose_hull
+  vars:
+    service_defaults:
+      name: semaphore
+      version: "latest"
+      postgres_version: "14"
+      port: 3000
+      traefik: true
+      external: false
+      watchtower: true
+      autoheal: true
+      subdirs:
+        - postgres
